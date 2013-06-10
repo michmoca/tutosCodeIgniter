@@ -1,0 +1,7 @@
+http://www.hongkiat.com/blog/html5-loginpage/
+http://www.w3schools.com/html/html5_new_elements.asp
+http://www.comocreartuweb.com/curso-de-html/estructura-semantica-html5/etiquetas-semanticas/section.html
+
+
+
+La etiqueta <section> y su correspondiente etiqueta de cierre </section> se utilizan para encerrar el código correspondiente a una sección genérica dentro de un documento o aplicación. Normalmente, un bloque de texto al que perfectamente le podríamos colocar un título o encabezado. Además, todo el contenido que engloba ha de guardar cierta relación entre sí.
