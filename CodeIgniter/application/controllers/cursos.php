@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Codigofacilito extends CI_Controller {
+class Cursos extends CI_Controller {
+
 	public function __construct(){
 		parent::__construct();
 		//$this->load->helper('mihelper');
@@ -9,22 +10,22 @@ class Codigofacilito extends CI_Controller {
 
 	}
 
-	public function index()
-	{
-		$this->load->library('menu',array('Inicio','Contacto','Cursos','por fin lo logre jeje'));
-		$data['mi_menu'] = $this->menu->construirMenu();
+	public function index(){
+		$data['segmento'] = $this->uri->segment(3);
 		$this->load->view('codigofacilito/headers');
-		$this->load->view('codigofacilito/bienvenido',$data);
-	}
-
-	public function holaMundo(){
-		$this->load->view('codigofacilito/headers');
-		$this->load->view('codigofacilito/bienvenido');
+		if(!$data['segmento']){
+			$data['cursos'] = $this->codigoFacilito_model->obtenerCursos();
+		}
+		else{
+			$data['cursos'] = $this->codigoFacilito_model->obtenerCursos($data['segmento']);
+		}
+		
+		$this->load->view('cursos/cursos',$data);
 	}
 
 	public function nuevo(){
 		$this->load->view('codigofacilito/headers');
-		$this->load->view('codigofacilito/formulario');
+		$this->load->view('cursos/formulario');
 	}
 
 	public function recibirDatos(){
@@ -38,7 +39,6 @@ class Codigofacilito extends CI_Controller {
 
 	}
 
-
 }
-/*el mae del tutorial cerro  php pero en welcome no se cierra */
+
 ?>
